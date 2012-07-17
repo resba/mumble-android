@@ -17,17 +17,17 @@ public class Settings {
 
 	public static final String PREF_QUALITY = "quality";
 
-    public static final String PREF_MICDETECT = "microphone";
-    public static final String ARRAY_MICDETECT_PHONE = "phone";
-    public static final String ARRAY_MICDETECT_HEADSET = "headset";
+	public static final String PREF_MICDETECT = "microphone";
+	public static final String ARRAY_MICDETECT_PHONE = "phone";
+	public static final String ARRAY_MICDETECT_HEADSET = "headset";
 
-    private static final String DEFAULT_QUALITY = "60000";
+	private static final String DEFAULT_QUALITY = "60000";
 	
 	public static final String PREF_PTT_KEY = "pttkey";
 	
 	public static final String PREF_EVENT_SOUNDS = "eventsounds";
-    public static final String PREF_EVENT_SOUNDS_VOL = "eventsounds_volume";
-    public static final String DEFAULT_SOUNDS_VOL = "40";
+	public static final String PREF_EVENT_SOUNDS_VOL = "eventsounds_volume";
+	public static final String DEFAULT_SOUNDS_VOL = "40";
 
 	public static final String PREF_PROXIMITY = "proximity";
 	
@@ -59,11 +59,11 @@ public class Settings {
 		return Integer.parseInt(preferences.getString(PREF_PTT_KEY, "-1"));
 	}
 
-    public int isMicSetupDetected(){
+	public int isMicSetupDetected(){
         return preferences.getString(PREF_MICDETECT, ARRAY_MICDETECT_HEADSET).equals(
                 ARRAY_MICDETECT_PHONE) ? MediaRecorder.AudioSource.CAMCORDER
                 : MediaRecorder.AudioSource.MIC;
-    }
+    	}
     
 	public boolean isJitterBuffer() {
 		return preferences.getString(PREF_JITTER, ARRAY_JITTER_NONE).equals(
@@ -74,9 +74,9 @@ public class Settings {
 		return preferences.getBoolean(PREF_EVENT_SOUNDS, true);
 	}
 
-    public int eventSoundsVolume() {
-        return Integer.parseInt(preferences.getString(PREF_EVENT_SOUNDS_VOL, DEFAULT_SOUNDS_VOL));
-    }
+    	public int eventSoundsVolume() {
+        	return Integer.parseInt(preferences.getString(PREF_EVENT_SOUNDS_VOL, DEFAULT_SOUNDS_VOL));
+    	}
 
 	public boolean isProximityEnabled() {
 		return preferences.getBoolean(PREF_PROXIMITY, false);
